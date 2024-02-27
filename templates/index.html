@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz</title>
+</head>
+<body>
+    <h1>Quizz</h1>
+    <form id="quizz-form">
+        {% for index, row in questions.iterrows() %}
+            <div class="question">
+                <p>{{ row ['Perguntas'] }}</p>
+                {% for option in ['A', 'B' , 'C', 'D'] %}
+                    <label>
+                        <input type="radio" name="answer_{{index}}" value="{{option}}"> {{ option }}: {{ row['Opção ' + option]}}
+                    </label>
+                    <br>
+                {% endfor %}
+            </div>
+         {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="score"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#quizz-form').submit(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    type:'POST',
+                    url:'/quizz',
+                    data:$(this).serialize(),
+                    success: function (response){
+                        $('#score').text('Você acertou' + response.score + '/' + response.total_questions + 'perguntas.')
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>
