@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form action="{{ url_for('quiz_submit') }}" method="post">
+        {% for index, row in questions.iterrows() %}
+            <div class="question">
+                <p>{{ row['Perguntas'] }}</p>
+                {% for option in ['A', 'B', 'C', 'D'] %}
+                    <label>
+                        <input type="radio" name="answer_{{ index }}" value="{{ option }}"> {{ option }}: {{ row['Opção ' + option] }}
+                    </label>
+                    <br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
