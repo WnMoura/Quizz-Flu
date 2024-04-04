@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Register.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&amp;display=swap" rel="stylesheet">
+
+
+    
+<title>Register</title>
 </head>
 <body>
-    <h1>Register</h1>
-    <form action="{{ url_for('register') }}" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Register">
-    </form>
+    <div class="container">
+        <h1>Cadastre-se Rapidamente !</h1>
+            <form action="{{ url_for('register') }}" method="post">
+                <label for="username" class="sr-only">Username</label><br>
+                <input type="text" id="username" name="username" placeholder="Username" required><br>
+                <label for="password" class="sr-only">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+                <input type="submit" value="Cadastrar">
+            </form>
+    </div>
 </body>
 </html>

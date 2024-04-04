@@ -51,7 +51,6 @@ def quiz():
         return redirect(url_for('login'))
     user_id = session['user_id']
     
-    # Código do Quizz
     df = pd.read_excel('Quizz 1 1 (1).xlsx', engine='openpyxl')
     options = ['A', 'B', 'C', 'D']
     score = 0
@@ -65,13 +64,12 @@ def quiz_submit():
     responses = request.form
     user_id = session['user_id']
     
-    # Processar respostas do Quizz e calcular a pontuação
     
     return redirect(url_for('quiz_result'))
 
 @app.route('/quiz_result')
 def quiz_result():
-    # Calcular e exibir o resultado do Quizz
+
     return render_template('quiz_result.html')
 
 if __name__ == '__main__':
