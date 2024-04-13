@@ -36,7 +36,7 @@ h1{
     line-height: 1px;
     text-align: center;
     color: #F1F6FB;
-    top: 5%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
@@ -46,7 +46,7 @@ h1{
 
 form {
     border-radius: 20px;
-    margin: 50px auto;
+    margin: 200px auto;
     max-width: 600px;
     padding: 20px;
     position: relative;
@@ -71,7 +71,44 @@ input[type="submit"] {
 }
 
 input[type="submit"][value="Cadastrar"] {
-    background-color: #ff0000;
-    color: #ffffff;
+    background-color:#F1F6FB;
     font-weight: 700;
+}
+
+input[type="submit"][value="Cadastrar"]:hover {
+    background-color: #146343;
+    transition: background-color 0.2s;
+}
+
+/* Estilos para as mensagens de erro */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+
+
+.alert-danger strong {
+    font-weight: bold;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    width: 500px;
+}
+
+
+.alert-danger a {
+    color: #721c24;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.alert-danger a:hover {
+    color: #721c24;
+    text-decoration: none;
 }

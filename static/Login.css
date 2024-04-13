@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,7 @@
 html, body {
     height: 100%;
 }
+
 
 .container {
     position: relative;
@@ -36,17 +39,45 @@ h1{
     line-height: 1px;
     text-align: center;
     color: #F1F6FB;
-    top: 5%;
+    top: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
 
 }
 
+a1{
+    position: absolute;
+    font-family: Yanone Kaffeesatz;
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 1px;
+    text-align: center;
+    color: #F1F6FB;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+
+}
+
+h2{
+    position: absolute;
+    font-family: Yanone Kaffeesatz;
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 1px;
+    text-align: center;
+    color: #F1F6FB;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
 
 form {
     border-radius: 20px;
-    margin: 50px auto;
+    margin: 150px auto;
     max-width: 600px;
     padding: 20px;
     position: relative;
@@ -63,15 +94,105 @@ input[type="password"],
 input[type="submit"] {
     width: 100%;
     height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-radius: 10px;
     font-size: 18px;
     text-align: center;
     margin-top:20px ;
 }
 
-input[type="submit"][value="Cadastrar"] {
-    background-color: #ff0000;
-    color: #ffffff;
-    font-weight: 700;
+input[type="submit"]:hover{
+    cursor: pointer;
+    background-color:#0b5537 ;
+    transition: background-color 0.2s
 }
+
+a{
+
+    position: absolute;
+    font-family: Yanone Kaffeesatz;
+    font-size: 2vw;
+    font-weight: 700;
+    line-height: 1px;
+    text-align: center;
+    color: #F1F6FB;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    cursor: pointer;
+    
+
+}
+
+a:hover{
+    color: #146343;
+    transition: color 0.2s
+
+}
+
+
+@media screen and (max-width: 896px) {
+    .container {
+        padding: 5px; 
+    }
+    
+    h1, a1, h2, a {
+        font-size: 5vw; 
+    }
+
+
+    form {
+        margin-top: 130px; 
+    }
+}
+
+
+
+@media screen and (max-width: 932px) {
+    .container {
+        padding: 5px; 
+    }
+    
+    h1, a1, h2, a {
+        font-size: 5vw; 
+    }
+
+    h2{
+        margin-top: -40px; 
+    }
+
+    form {
+        margin-top: 130px; 
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 65px;
+    }
+    
+    h1, a1, h2, a {
+        font-size: 2vw; 
+    }
+    h2{
+        margin-top: 100px;
+    }
+
+
+}
+
+
+@media screen and (min-width: 1450px) {
+    .container {
+        padding: 65px;
+    }
+    
+    h1, a1, h2, a {
+        font-size: 2vw; 
+    }
+    h2{
+    margin-top: 0;
+    }
+}
+

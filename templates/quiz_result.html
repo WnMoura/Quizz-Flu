@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz_result.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&amp;display=swap" rel="stylesheet">
     <title>Quiz Result</title>
 </head>
 <body>
-    <h1>Quiz Result</h1>
+    <div class="container">
+        <h1>Quiz Result</h1>
+        <div class="result">
+            <p>Your score:</p>
+            <p class="score">{{ score }}/{{ total_questions }}</p>
+            <img src="{{image}}" class="image" alt="image">
+            <p class="message">{{ message }}</p>
+            {% if score < total_questions %}
+            <a href="{{ url_for('quiz') }}" class="Tente-Novamente-link">Tente Novamente!</a>
+            {% endif %}
+        </div>
+    </div> 
 </body>
 </html>

@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@600&amp;display=swap" rel="stylesheet">
+
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Quiz</h1>
-    <form action="{{ url_for('quiz_submit') }}" method="post">
+    <div class="container">
+        <form action="{{ url_for('quiz_submit') }}" method="post">
         {% for index, row in questions.iterrows() %}
-            <div class="question">
-                <p>{{ row['Perguntas'] }}</p>
-                {% for option in ['A', 'B', 'C', 'D'] %}
-                    <label>
-                        <input type="radio" name="answer_{{ index }}" value="{{ option }}"> {{ option }}: {{ row['Opção ' + option] }}
-                    </label>
-                    <br>
-                {% endfor %}
+        <div class="card">
+            <div class="question">{{ row['Perguntas'] }}</div>
+            <div class="options">
+                <label><input type="radio" name='answer_{{ index }}' value="A"> {{ row['Opção A'] }}</label><br>
+                <label><input type="radio" name='answer_{{ index }}' value="B"> {{ row['Opção B'] }}</label><br>
+                <label><input type="radio" name='answer_{{ index }}' value="C"> {{ row['Opção C'] }}</label><br>
+                <label><input type="radio" name='answer_{{ index }}' value="D"> {{ row['Opção D'] }}</label><br>
             </div>
+        </div>
         {% endfor %}
-        <button type="submit">Submit</button>
-    </form>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>

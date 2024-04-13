@@ -13,14 +13,20 @@
 </head>
 <body>
     <div class="container">
-        <h1>Login</h1>
+        <a1>Bem vindo ao Quiz do Flu !</a1>
+        <h1> Realize o Login</h1>
+        <h2>Ou</h2>
         <form action="{{ url_for('login') }}" method="post">
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" required><br>
             <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" required><br><br>
             <input type="submit" value="Login">
+            <a href="{{ url_for('register') }}">cadastre-se!</a>
+
+        </form>
+        
+
     </div>
-    </form>
 </body>
 </html>
